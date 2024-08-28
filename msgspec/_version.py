@@ -225,7 +225,7 @@ def git_versions_from_keywords(keywords, tag_prefix, verbose):
     if verbose:
         print("no suitable tags, using unknown + full revision id")
     return {
-        "version": "0+unknown",
+        "version": "0.18.6+unknown",
         "full-revisionid": keywords["full"].strip(),
         "dirty": False,
         "error": "no suitable tags",
@@ -362,7 +362,7 @@ def render_pep440(pieces):
                 rendered += ".dirty"
     else:
         # exception #1
-        rendered = "0+untagged.%d.g%s" % (pieces["distance"], pieces["short"])
+        rendered = "0.18.6+untagged.%d.g%s" % (pieces["distance"], pieces["short"])
         if pieces["dirty"]:
             rendered += ".dirty"
     return rendered
@@ -555,7 +555,7 @@ def get_versions():
         pass
 
     return {
-        "version": "0+unknown",
+        "version": "0.18.6+unknown",
         "full-revisionid": None,
         "dirty": None,
         "error": "unable to compute version",
